@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<style>
+		div {
+			width: 72px;
+			height: 72px;
+			background-color: red;
+			position: absolute;
+		}
+		a {
+			border: 2px solid black;
+			margin: 100px;
+			position: absolute;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var elem = document.querySelector('div');
+			var anchor = document.querySelector('a');
+
+			function positionAt(anchor, position, elem) {
+				var coords = anchor.getBoundingClientRect();
+				switch(position) {
+					case 'top':
+						elem.style.top = coords.top - elem.offsetHeight + 'px';
+						elem.style.left = coords.left + 'px';
+						break;
+					case 'right':
+						elem.style.top = coords.top + 'px';
+						elem.style.left = coords.right + 'px';
+						break;
+					case 'bottom':
+						elem.style.top = coords.bottom + 'px';
+						elem.style.left = coords.left + 'px';
+						break;
+				};
+			};
+			positionAt(anchor, 'top', elem);
+		};
+	</script>
+</head>
+<body>
+	<a>ANCHOR</a>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<script>
+		(function() {
+			if (!Element.prototype.closest) {
+				Element.prototype.closest = function(css) {
+					var element = this;
+
+					while (element) {
+						if (element.matches(css)) return element;
+						else element = element.parentElement;
+					}
+					return null;
+				};
+			};
+		})();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

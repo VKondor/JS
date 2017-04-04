@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 1</title>
+	
+	<!-- Результат будет true, внешняя переменная не изменится. если из строки var value = false убрать ключевое слово var, то резултат останется прежним, а внешняя переменная перезапишется. -->
+
+	<script>
+		var value = 0;
+		function f() {
+			if (1) {
+				value = true;
+			} else {
+				var value = false;
+			}
+			alert( value );
+		}
+		f();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 1</title>
+	<script>
+		function printNumber() {
+			console.log(counter++);
+
+			if (counter > 20) {
+				clearInterval(timer)
+			};
+		};
+
+		var counter = 1;
+		var timer = setInterval(printNumber, 100);
+
+		/* setTimeout(function() {
+			clearInterval(timer);
+		}, 2000) */
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

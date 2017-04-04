@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<script>
+		function bigToSmall(arr) {
+			var smallArr = [];
+
+			for (var i = 0; i < arr.length; i++) {
+				smallArr = smallArr.concat(arr[i]);
+			};
+
+			smallArr.sort(function(a, b) {
+				return b - a;
+			});
+
+			return smallArr.join('>');
+		};
+
+		document.write(bigToSmall([[1,2],[3,4],[5,6]]) + '<br/>' );
+		document.write(bigToSmall([[1,3,5],[2,4,6]]) + '<br/>' );
+		document.write(bigToSmall([[1,1],[1],[1,1]]) );
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 1</title>
+	<script>
+		function calc(expression) {
+			try {
+				var expression = eval(prompt('Введите выражение:', ''));
+
+				if (isNaN(expression)) {
+					throw new Error('NaN!');
+				};
+				alert(expression);
+			}
+			catch(e) {
+				alert('Ошибка: ' + e.message);
+				calc();
+			};
+		};
+
+		calc();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

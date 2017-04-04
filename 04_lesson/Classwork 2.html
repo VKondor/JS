@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 2</title>
+	<script>
+		var user = {
+			firstName: "Вася",
+			sayHi: function() {
+				alert( this.firstName );
+			}
+		}; 
+
+		var f = user.sayHi.bind(user);  
+		f(); 
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

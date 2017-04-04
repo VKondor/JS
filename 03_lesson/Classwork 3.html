@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 3</title>
+	<script>
+		function Summator() {
+			this.sum = function(a, b) {
+				return a + b;
+			},
+			this.run = function() {
+				var a = +prompt('Введите a:', '');
+				var b = +prompt('Введите b:', '');
+				alert( this.sum(a, b) );
+			}
+		};
+
+		new Summator().run();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

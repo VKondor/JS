@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<script>
+		function printNumber() {
+			if (counter == 0) {
+				clearInterval(timer);
+				alert('Отсчет закончен');
+			};
+			var wrapper = document.querySelector('.counter');
+			wrapper.innerHTML = counter--;
+		};
+
+		var counter = 10;
+		var timer = setInterval(printNumber, 1000);
+	</script>
+</head>
+<body>
+	<div class="counter"></div>
+</body>
+</html>

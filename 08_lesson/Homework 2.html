@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<style>
+		button {
+			margin: 100px;
+		}
+		.tip {
+			position: absolute;
+			border: 1px solid grey;
+			padding: 10px;
+			text-align: center;
+			background: lightgrey; 
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var displayTip
+
+			document.onmouseover = function(e) {
+				var tipText = e.target.dataset.tooltip;
+				if (!tipText) return;
+
+				var tipDiv = document.createElement('div');
+				tipDiv.className = 'tip';
+				tipDiv.innerHTML = tipText;
+				document.body.appendChild(tipDiv);
+
+				var targetPos = e.target.getBoundingClientRect();
+
+				var top = targetPos.top - tipDiv.offsetHeight - 5;
+				if (top < 0) top = 0;
+
+				var left = targetPos.left + (e.target.offsetWidth - tipDiv.offsetWidth) / 2;
+				if (left < 0) left = 0;
+
+				tipDiv.style.top = top + 'px';
+				tipDiv.style.left = left + 'px';
+
+				displayTip = tipDiv;
+			};
+			document.onmouseout = function(e) {
+				if (displayTip) {
+					document.body.removeChild(displayTip);
+					displayTip = null;
+				};
+			};
+		};
+	</script>
+</head>
+<body>
+	<button data-tooltip="подсказка длиннее, чем элемент">Короткая кнопка</button>
+	<button data-tooltip="HTML<br>подсказка">Ещё кнопка</button>
+</body>
+</html>

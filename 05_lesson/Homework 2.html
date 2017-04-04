@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<script>
+		function smartSum() {
+			var sum = 0;
+
+			for (i = 0; i < arguments.length; i++) {
+				if (isNaN(arguments[i])) {
+					arguments[i] = 0;
+				};
+				sum += arguments[i];
+			};
+
+			function f() {
+				for (i = 0; i < arguments.length; i++) {
+					if (isNaN(arguments[i])) {
+						arguments[i] = 0;
+					};
+					sum += arguments[i];
+				};
+				return f
+			};
+
+			f.toString = function() {
+				return sum;
+			};
+			return f;
+		};		
+
+		alert( smartSum(1, 1)('sdsd', null)(6, 'sdfd', 6)(10, 5) );		
+		alert( smartSum(3, 2) );
+		//smartSum(1, 3)(2);
+		//smartSum(1, 2)(3, 4, 5)(6)(7, 10);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

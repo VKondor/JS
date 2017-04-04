@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 1</title>
+	<style>
+		.red {
+			width: 150px;
+			height: 150px;
+			background-color: red;
+			position: absolute;
+		}
+		.green {
+			width: 150px;
+			height: 150px;
+			background-color: green;
+			position: absolute;
+
+		}
+		.blue {
+			width: 150px;
+			height: 150px;
+			background-color: blue;
+			position: absolute;
+
+		}
+	</style>
+
+	<script>
+		window.onload = function() {
+			var width = document.documentElement.clientWidth;
+			var height = document.documentElement.clientHeight;
+			var elem = document.querySelectorAll('div');
+
+			function appear() {
+				for (var i = 0; i < elem.length; i++) {
+					elem[i].style.top = Math.random() * (height - elem[i].offsetHeight) + 'px';
+					elem[i].style.left = Math.random() * (width - elem[i].offsetWidth) + 'px';
+				};
+			};
+
+			setInterval(appear, 1000);
+		};
+	</script>
+</head>
+<body>
+	<div class="red"></div>
+	<div class="green"></div>
+	<div class="blue"></div>
+</body>
+</html>

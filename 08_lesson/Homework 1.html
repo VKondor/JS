@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 1</title>
+	<style>
+		
+	</style>
+
+	<script>
+		window.onload = function() {
+			var form = document.forms.form;
+			var log = form.log;
+			var pass = form.pass;
+			var phone = form.phone;
+
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+
+				if (log.value.match(/\d/g)) {
+					log.style.backgroundColor = 'red';
+				} else {
+					log.style.backgroundColor = 'white';
+				};
+
+				if (pass.value.match(/\$/g)) {
+					pass.style.backgroundColor = 'red';
+				} else {
+					pass.style.backgroundColor = 'white';
+				};
+
+				if (phone.value.match(/\D/g)) {
+					phone.style.backgroundColor = 'red';
+				} else {
+					phone.style.backgroundColor = 'white';
+				};
+			})
+		};
+	</script>
+</head>
+<body>
+	<form name="form" action="">
+		<label>
+			Логин: <input name="log" type="text" required>
+		</label>
+		<label>
+			Пароль: <input name="pass" type="password" required>
+		</label>
+		<label>
+			Телефон: <input name="phone" type="text" required>
+		</label>
+		<input name="btn" type="submit" value="Отправить">
+	</form>
+</body>
+</html>

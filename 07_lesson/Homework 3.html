@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<script>
+		window.onload = function() {
+			function makeBoard(rows, cells) {
+				var table = document.createElement('table');
+				document.body.appendChild(table);
+				table.style.borderCollapse = 'collapse';
+				table.style.border = '1px solid black';
+
+				for (var i = 0; i < rows; i++) {
+					var tr = document.createElement('tr');
+					table.appendChild(tr);
+
+					for (var j = 0; j < cells; j++) {
+						var td = document.createElement('td');
+						tr.appendChild(td);
+						td.style.padding = '20px';
+
+						if ((i + j) % 2 == 0) {
+							td.style.backgroundColor = 'black'
+						} else {
+							td.style.backgroundColor = 'white'
+						};
+					};
+				};
+			};
+			makeBoard(5, 8);
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

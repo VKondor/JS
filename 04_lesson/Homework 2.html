@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<script>
+		function compose(val) {
+			var counter = val;
+
+			if (arguments.length != 0) {
+				for (var i = 1; i < arguments.length; i++) {
+					counter = arguments[i](counter);
+				};
+			} else return counter;
+			return counter;
+		};
+
+		var doubleTheValue = function(val) { return val * 2; };
+		var addOneToTheValue = function(val) { return val + 1; };
+		alert( compose(5) );
+		alert( compose(5, doubleTheValue) );
+		alert( compose(5, doubleTheValue, addOneToTheValue) );
+	</script>
+</head>
+<body>
+
+</body>
+</html>

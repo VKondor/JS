@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 3</title>
+	<script>
+		function makeArmy() {
+			var shooters = []; 
+
+			for (var i = 0; i < 10; i++) { // первый сопособ
+				var shooter = function(i) {
+					return function() {alert(i)};
+				}(i);
+				shooters.push(shooter); 
+			};
+
+			/* for (var i = 0; i < 10; i++) { // второй способ
+				var shooter = function shoot() {
+					alert(shoot.i)
+				};
+				shooter.i = i;
+				shooters.push(shooter); 
+			}; */
+
+			/* for (var i = 0; i < 10; i++) (function(i) { // третий способ
+				var shooter = function() {
+					alert(i)
+				};
+				shooters.push(shooter); 
+			})(i); */
+
+			return shooters; 
+		};
+
+		var army = makeArmy(); 
+		army[0]();
+		army[5]();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

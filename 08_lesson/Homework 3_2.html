@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3_2</title>
+	<script>
+		window.onload = function() {
+			var arg1 = document.getElementById('arg1');
+			var arg2 = document.getElementById('arg2');
+			var result = document.getElementById('result');
+			
+			var sumBtn = document.getElementById('sum');
+			var diffBtn = document.getElementById('diff');
+			var mulBtn = document.getElementById('mul');
+			var divBtn = document.getElementById('div');
+
+			sumBtn.addEventListener("click", sum);
+			diffBtn.addEventListener("click", diff);
+			mulBtn.addEventListener("click", mul);
+			divBtn.addEventListener("click", div);
+		};
+
+		function sum() {
+			result.value = +arg1.value + +arg2.value;
+		};
+
+		function diff() {
+			result.value = arg1.value - arg2.value;
+		};
+
+		function mul() {
+			result.value = arg1.value * arg2.value;
+		};
+
+		function div() {
+			result.value = arg1.value / arg2.value;
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" id="arg1">
+
+		<button id="sum">+</button>
+		<button id="diff">-</button>
+		<button id="mul">*</button>
+		<button id="div">/</button>
+
+		<input type="text" id="arg2"> =
+		<input type="text" id="result" disabled>
+	</div>
+</body>
+</html>

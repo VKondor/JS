@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 1</title>
+	<script>
+		window.onload = function() {
+			//debugger;
+			var span = document.querySelector('span');
+			var elem = document.body.querySelectorAll('*');
+			var pos = ['beforeBegin', 'afterBegin', 'beforeEnd', 'afterEnd'];
+			var i = 1;
+			var j = 0;
+
+			var interval = setInterval(function() {
+				elem[i].insertAdjacentElement(pos[j], span);
+				j++;
+
+				if (j == pos.length) {
+					j = 0;
+					i++;
+				};
+
+				if (i == elem.length) i = 1;
+			}, 400);
+		};
+	</script>
+</head>
+<body>
+	<span>Я буду перемещаться</span>
+	<div>Пользователи:</div>
+	<ul>
+		<li>user1</li>
+		<li>user2</li>
+	</ul>
+</body>
+</html>

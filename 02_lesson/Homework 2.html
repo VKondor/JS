@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<script>
+		function makeStrCount() {
+			var counter = 0;
+			
+			function strCount(obj) {
+				for (var key in obj) {
+					if (typeof( obj[key] ) === 'string') {counter++} 
+					else if (typeof( obj[key] ) === 'object') {strCount(obj[key])};
+				};
+			return counter;
+			};
+		return strCount;
+		};
+
+		var strCount = makeStrCount();
+
+		alert( strCount({
+			first: "1",
+			second: "2",
+			third: false,
+			fourth: ["anytime", 2, 3, 4],
+			fifth: null
+		}) );
+		</script>
+	</head>
+	<body>
+
+	</body>
+	</html>

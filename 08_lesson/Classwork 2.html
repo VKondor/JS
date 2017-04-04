@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 2</title>
+	<script>
+		window.onload = function() {
+			var field = document.getElementById('field');
+			var btn = document.getElementById('btn');
+			var div = document.getElementById('output');
+
+			btn.addEventListener('click', function() {
+				div.textContent = field.value;
+			});
+		};
+	</script>
+</head>
+<body>
+	<input id="field" type="text" value="">
+	<input id="btn" type="button" value="Write in">
+	<div id="output"></div>
+</body>
+</html>

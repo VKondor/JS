@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 2</title>
+	<script>
+		window.onload = function() {
+			var div = document.getElementById('widget');
+			console.log('div');
+			
+			var data = div.dataset.widgetName;
+			console.log(data);
+		};
+	</script>
+</head>
+<body>
+	<div id="widget" data-widget-name="menu">Выберите жанр</div>	
+</body>
+</html>

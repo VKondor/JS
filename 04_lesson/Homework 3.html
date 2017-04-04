@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<script>
+		function work(a) {
+			return a + 5;
+		};
+
+		function makeLogging(f, log) { 
+			return function() {
+				log.push(arguments[0]);
+				return f.apply(this, arguments);
+			};
+
+		};
+
+		var log = [];
+		work = makeLogging(work, log);
+
+		work(1);
+		work(5);
+
+		for (var i = 0; i < log.length; i++) {
+			alert( 'Лог:' + log[i] );
+		};	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

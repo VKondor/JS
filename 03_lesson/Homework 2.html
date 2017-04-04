@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<script>
+		function runString(arg, obj) {
+			var result = new Function(obj.param, obj.func);
+			return result(arg);
+		};
+
+		var arg = 4;
+		var obj = {
+			param: 'num',
+			func: 'return Math.sqrt(num)'
+		};
+
+		alert( runString(arg, obj) );
+	</script>
+</head>
+<body>
+
+</body>
+</html>

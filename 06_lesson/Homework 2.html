@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<script>
+		window.onload = function() {
+			var elem = document.createElement('div');
+			elem.innerHTML = '<b>Новый элемент</b>';
+
+			function insertAfter(elem, refElem) {
+				refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+			};
+
+			var body = document.body;
+
+			insertAfter(elem, body.firstChild);
+			insertAfter(elem, body.lastChild);
+
+			console.log(body.lastChild);
+		};
+	</script>
+</head>
+<body>
+	<div>Это</div>
+	<div>Элементы</div>
+</body>
+</html>

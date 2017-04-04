@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 2</title>
+	<script>
+		function makeCounter() {
+			var currentCounter = 1;
+
+			return function() {
+				return currentCounter++;
+			};
+		};
+
+		var counter = makeCounter();
+		counter();
+		counter();
+		counter();
+		alert( counter() );
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

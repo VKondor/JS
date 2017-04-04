@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 3</title>
+	<script>
+		function typeOf(arg) {
+			try {
+				var result = {}.toString.call(arg);
+				if (arguments.length > 1) {
+					throw new Error('Превышено кол-во аргументов');
+				};
+			return result.slice(8, -1);
+			}
+			catch(e) {
+				return e.message;
+			};
+		};
+
+		alert( typeOf(2, 'asdasd') )
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
