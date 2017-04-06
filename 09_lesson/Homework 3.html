@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 3</title>
+	<style>
+		.elem {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var inputs = document.querySelectorAll('input');
+			var elem = document.querySelector('.elem');
+
+			inputs[2].addEventListener('click', function() {
+				var x = parseInt(inputs[0].value);
+				var y = parseInt(inputs[1].value);
+
+				if (isNaN(x) || isNaN(y)) {
+					alert('Некорректные значения!')
+					return;
+				};
+
+				elem.style.left = x + 'px';
+				elem.style.top = y + 'px';
+
+			});
+		};
+	</script>
+</head>
+<body>
+	<input type="text" placeholder="координата Х"> x
+	<input type="text" placeholder="координата У">
+	<input type="submit" value="Переместить">
+	<div class="elem"></div>
+</body>
+</html>

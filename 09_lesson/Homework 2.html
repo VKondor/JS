@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 2</title>
+	<style>
+		.wrapper {
+			position: fixed;
+			top: 200px;
+			left: 200px;
+			width: 150px;
+			height: 150px;
+		}
+		.runner {
+			position: absolute;
+			top: 25px;
+			left: 25px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			color: white;
+			line-height: 95px;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 700;
+			border-radius: 50%;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var wrapper = document.querySelector('.wrapper')
+
+			wrapper.addEventListener('mousemove', function(e) {
+				var target = e.target;
+
+				if (target.classList.contains('runner')) {
+					target = target.parrenElement;
+				};
+
+				var pos = wrapper.getBoundingClientRect();
+				var	x = e.offsetX - target.offsetWidth / 2;
+				var	y = e.offsetY - target.offsetHeight / 2;
+
+				var shift = 0.5;
+				var shiftX = x * shift;
+				var shiftY = y * shift;
+
+				target.style.top = pos.top - shiftY + 'px';
+				target.style.left = pos.left - shiftX + 'px';
+
+				var docWidth = document.documentElement.clientWidth;
+				var docHeight = document.documentElement.clientHeight;
+
+				if ((pos.top + 75) < 0) {
+					target.style.top = docHeight - target.offsetHeight + 25 + 'px';
+				};
+				if ((pos.left + 75) < 0) {
+					target.style.left = docWidth - target.offsetWidth + 25 + 'px';
+				};
+				if ((pos.top + 75) > docHeight) {
+					target.style.top = 0 - 25 + 'px';
+				};
+				if ((pos.left + 75) > docWidth) {
+					target.style.left = 0 - 25 + 'px';
+				};
+			});
+
+		};
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="runner">Скидка</div>
+	</div>
+</body>
+</html>

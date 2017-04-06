@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 1</title>
+	<style>
+		.insert {
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var list = document.querySelector('.list');
+
+			list.addEventListener('click', function(e) {
+				for (i = 0; i < list.children.length; i++) {
+					list.children[i].classList.remove('insert');
+				};
+				
+				if (e.target.tagName != "LI") return;
+				e.target.classList.add('insert');
+			});
+		};
+	</script>
+</head>
+<body>
+	<ul class="list">
+		<li>Математика</li>
+		<li>Физика</li>
+		<li>Программирование</li>
+		<li>Астрономия</li>
+		<li>Английский язык</li>
+	</ul>
+</body>
+</html>

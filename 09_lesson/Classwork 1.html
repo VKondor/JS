@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classwork 1</title>
+	<script>
+		window.onload = function() {
+			document.addEventListener('keydown', function(e) {
+				if (e.ctrlKey == true && e.keyCode == 65) {
+					alert('Данные выбраны!');
+				};
+
+				if (e.ctrlKey == true && e.keyCode == 83) {
+					alert('Данные сохранены');
+				};
+				e.preventDefault();
+			})
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
