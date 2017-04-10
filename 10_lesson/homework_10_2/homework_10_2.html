@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <title>10</title>
+  <script>
+    window.onload = function(){
+      function getPage(pageUrl){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', pageUrl);
+        xhr.timeout = 20000;
+        xhr.send();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState != 4) return;
+          if (xhr.status != 200) {
+            alert(xhr.status + ': ' + xhr.statusText);
+          } else {
+            var h = document.createElement('html');
+            h.innerHTML = xhr.responseText;
+            var div = document.createElement('div');
+            div.innerHTML = h.getElementsByTagName('body')[0].innerHTML;
+            document.body.appendChild(div);
+          }
+        };
+        xhr.ontimeout = function() {
+          alert( 'Время ожидания превышено!' );
+        };
+      }
+
+      getContent.onclick = function(){
+        getPage('page_1.html');
+        getPage('page_2.html');
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <button id="getContent">Загрузить</button>
+</body>
+</html>

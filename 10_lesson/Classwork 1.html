@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <title>10</title>
+  <script>
+    window.onload = function(){
+      loadBtn.addEventListener("click", function(e){
+        if( document.getElementsByTagName('img').length > 0 ) return;
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function() {
+         var blb = new Blob([xhr.response], {type: 'image/jpg'});
+         var url = (window.URL || window.webkitURL).createObjectURL(blb);
+         i = new Image();
+         i.src = url;
+         document.body.append(i);
+       }
+       xhr.open('GET', 'img.jpg');
+       xhr.send();
+       setTimeout(loadPicture, 1000);
+     });
+    }
+  </script>
+</head>
+<body>
+  <button id="loadBtn">Button</button><br>
+</body>
+</html>

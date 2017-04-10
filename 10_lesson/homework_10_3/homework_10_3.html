@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <title>10</title>
+  <script>
+window.onload = function(){
+  btn.onclick = function getData(url){
+    var a = num1.value;
+    var b = num2.value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'CalcHandler.ashx');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    xhr.send('a='+a+'&b='+b);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState != 4) return;
+      if (xhr.status != 200) {
+        alert(xhr.status + ': ' + xhr.statusText);
+      } else {
+        alert(xhr.responseText);
+      }
+    };
+  }
+}
+  </script>
+</head>
+<body>
+  <input type="number" id="num1">
+  <input type="number" id="num2">
+  <button id="btn">Get data</button>
+</body>
+</html>
